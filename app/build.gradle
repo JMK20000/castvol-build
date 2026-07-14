@@ -2,6 +2,13 @@ plugins {
     id 'com.android.application'
 }
 
+// 이 부분을 추가하세요!
+repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
 android {
     compileSdk 34
     namespace 'io.axiom.castvol'
@@ -13,16 +20,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
+    // ... 나머지 내용은 그대로 유지 ...
 }
 
 dependencies {
