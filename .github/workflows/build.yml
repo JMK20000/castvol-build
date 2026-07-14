@@ -1,3 +1,4 @@
+
 name: Build CastVol APK
 on: workflow_dispatch
 jobs:
@@ -10,11 +11,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
-      # 여기서 Gradle 환경을 자동으로 세팅해줍니다
+      # [추가됨] 파일이 제대로 들어갔는지 검사하는 단계
+      - name: Check File Structure
+        run: ls -R
+        
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         
-      # 이제 gradlew 없이도 gradle 명령어가 작동합니다
       - name: Build with Gradle
         run: gradle assembleDebug
         
@@ -23,5 +26,3 @@ jobs:
         with:
           name: CastVol-APK
           path: app/build/outputs/apk/debug/*.apk
-
-    
