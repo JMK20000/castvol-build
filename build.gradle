@@ -1,3 +1,27 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    // 1. 이 줄이 반드시 android 블록 맨 위에 있어야 합니다.
+    namespace 'io.axiom.castvol'
+    
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "io.axiom.castvol"
+        minSdk 31
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
 dependencies {
     implementation 'de.robv.android.xposed:api:82'
 }
